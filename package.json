@@ -1,0 +1,22 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "Entrega rapida codingdojo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "purgarcss": "purgecss --css ./assets/css/main.css --content *.html --output ./assets/css/estilospurgados.css",
+    "build-css": "node-sass --include-path scss assets/scss/main.scss assets/css/main.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css & nodemon server.js\""
+  },
+  "author": "vicenciomf",
+  "license": "ISC",
+  "devDependencies": {
+    "bootstrap": "^5.2.0",
+    "node-sass": "^7.0.1",
+    "nodemon": "^2.0.19"
+  },
+  "dependencies": {
+    "purgecss": "^4.1.3"
+  }
+}
