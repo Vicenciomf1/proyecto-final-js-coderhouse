@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "purgarcss": "purgecss --css ./assets/css/main.css --content *.html --output ./assets/css/estilospurgados.css",
     "build-css": "node-sass --include-path scss assets/scss/main.scss assets/css/main.css",
-    "watch-css": "nodemon -e scss -x \"npm run build-css & nodemon server.js\""
+    "watch-css": "nodemon -e scss -x \"npm run act & nodemon server.js\"",
+    "act": "node-sass --include-path scss assets/scss/main.scss assets/css/main.css && purgecss --css ./assets/css/main.css --content *.html --output ./assets/css/estilospurgados.css"
   },
   "author": "vicenciomf",
   "license": "ISC",

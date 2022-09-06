@@ -381,7 +381,13 @@ textarea {
     width: 50%; }
   .col-md-8 {
     flex: 0 0 auto;
-    width: 66.66666667%; } }
+    width: 66.66666667%; }
+  .col-md-10 {
+    flex: 0 0 auto;
+    width: 83.33333333%; }
+  .col-md-12 {
+    flex: 0 0 auto;
+    width: 100%; } }
 
 @media (min-width: 992px) {
   .row-cols-lg-3 > * {
@@ -400,7 +406,10 @@ textarea {
     width: 33.33333333%; }
   .col-xl-6 {
     flex: 0 0 auto;
-    width: 50%; } }
+    width: 50%; }
+  .col-xl-8 {
+    flex: 0 0 auto;
+    width: 66.66666667%; } }
 
 .form-control {
   display: block;
@@ -584,6 +593,23 @@ textarea.form-control {
   --bs-btn-disabled-border-color: #3763f4
 ; }
 
+.btn-outline-primary {
+  --bs-btn-color: #3763f4;
+  --bs-btn-border-color: #3763f4;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #3763f4;
+  --bs-btn-hover-border-color: #3763f4;
+  --bs-btn-focus-shadow-rgb: 55, 99, 244;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #3763f4;
+  --bs-btn-active-border-color: #3763f4;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #3763f4;
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: #3763f4;
+  --bs-gradient: none
+; }
+
 .collapse:not(.show) {
   display: none; }
 
@@ -733,6 +759,44 @@ textarea.form-control {
   .navbar-expand-md .navbar-toggler {
     display: none; } }
 
+.card, .producto {
+  --bs-card-spacer-y: 1rem;
+  --bs-card-spacer-x: 1rem;
+  --bs-card-title-spacer-y: 0.5rem;
+  --bs-card-border-width: 0;
+  --bs-card-border-color: var(--bs-border-color-translucent);
+  --bs-card-border-radius: 1rem;
+  --bs-card-box-shadow: ;
+  --bs-card-inner-border-radius: 1rem;
+  --bs-card-cap-padding-y: 0.5rem;
+  --bs-card-cap-padding-x: 1rem;
+  --bs-card-cap-bg: rgba(0, 0, 0, 0.03);
+  --bs-card-cap-color: ;
+  --bs-card-height: ;
+  --bs-card-color: ;
+  --bs-card-bg: #fff;
+  --bs-card-img-overlay-padding: 1rem;
+  --bs-card-group-margin: 0.75rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: var(--bs-card-height);
+  word-wrap: break-word;
+  background-color: var(--bs-card-bg);
+  background-clip: border-box;
+  border: var(--bs-card-border-width) solid var(--bs-card-border-color);
+  border-radius: var(--bs-card-border-radius); }
+
+.card > hr, .producto > hr {
+  margin-right: 0;
+  margin-left: 0; }
+
+.card-body {
+  flex: 1 1 auto;
+  padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
+  color: var(--bs-card-color); }
+
 .badge {
   --bs-badge-padding-x: 0.65em;
   --bs-badge-padding-y: 0.35em;
@@ -860,7 +924,7 @@ textarea.form-control {
 .w-100 {
   width: 100% !important; }
 
-.h-100 {
+.h-100, .producto {
   height: 100% !important; }
 
 .flex-column {
@@ -888,6 +952,10 @@ textarea.form-control {
   margin-right: auto !important;
   margin-left: auto !important; }
 
+.my-4 {
+  margin-top: 1.5rem !important;
+  margin-bottom: 1.5rem !important; }
+
 .mt-5 {
   margin-top: 3rem !important; }
 
@@ -896,6 +964,9 @@ textarea.form-control {
 
 .me-3 {
   margin-right: 1rem !important; }
+
+.me-4 {
+  margin-right: 1.5rem !important; }
 
 .mb-0 {
   margin-bottom: 0 !important; }
@@ -912,6 +983,9 @@ textarea.form-control {
 .mb-5 {
   margin-bottom: 3rem !important; }
 
+.ms-3 {
+  margin-left: 1rem !important; }
+
 .p-3 {
   padding: 1rem !important; }
 
@@ -921,6 +995,14 @@ textarea.form-control {
 .px-2 {
   padding-right: .5rem !important;
   padding-left: .5rem !important; }
+
+.px-4 {
+  padding-right: 1.5rem !important;
+  padding-left: 1.5rem !important; }
+
+.py-2 {
+  padding-top: .5rem !important;
+  padding-bottom: .5rem !important; }
 
 .py-3 {
   padding-top: 1rem !important;
@@ -943,6 +1025,9 @@ textarea.form-control {
 .pt-5 {
   padding-top: 3rem !important; }
 
+.fs-5 {
+  font-size: 1.25rem !important; }
+
 .fs-6 {
   font-size: 1rem !important; }
 
@@ -951,6 +1036,9 @@ textarea.form-control {
 
 .text-center {
   text-align: center !important; }
+
+.text-uppercase {
+  text-transform: uppercase !important; }
 
 .text-primary {
   --bs-text-opacity: 1;
@@ -987,12 +1075,16 @@ textarea.form-control {
     align-items: flex-start !important; } }
 
 @media (min-width: 768px) {
+  .d-md-flex {
+    display: flex !important; }
   .flex-md-column {
     flex-direction: column !important; }
   .justify-content-md-start {
     justify-content: flex-start !important; }
   .align-items-md-start {
     align-items: flex-start !important; }
+  .align-items-md-center {
+    align-items: center !important; }
   .text-md-start {
     text-align: left !important; } }
 
@@ -1001,6 +1093,8 @@ textarea.form-control {
     align-items: flex-start !important; }
   .order-lg-last {
     order: 6 !important; }
+  .mb-lg-5 {
+    margin-bottom: 3rem !important; }
   .py-lg-5 {
     padding-top: 3rem !important;
     padding-bottom: 3rem !important; }
@@ -1010,6 +1104,8 @@ textarea.form-control {
 @media (min-width: 1200px) {
   .justify-content-xl-start {
     justify-content: flex-start !important; }
+  .justify-content-xl-center {
+    justify-content: center !important; }
   .p-xl-4 {
     padding: 1.5rem !important; }
   .py-xl-5 {
@@ -1083,6 +1179,10 @@ img::-moz-selection {
 
 .bs-icon-md {
   --bs-icon-size: 1.5rem
+; }
+
+.bs-icon-xl {
+  --bs-icon-size: 2.5rem
 ; }
 
 .bs-icon.bs-icon-primary {
@@ -1469,7 +1569,13 @@ textarea {
     width: 50%; }
   .col-md-8 {
     flex: 0 0 auto;
-    width: 66.66667%; } }
+    width: 66.66667%; }
+  .col-md-10 {
+    flex: 0 0 auto;
+    width: 83.33333%; }
+  .col-md-12 {
+    flex: 0 0 auto;
+    width: 100%; } }
 
 @media (min-width: 992px) {
   .row-cols-lg-3 > * {
@@ -1488,7 +1594,10 @@ textarea {
     width: 33.33333%; }
   .col-xl-6 {
     flex: 0 0 auto;
-    width: 50%; } }
+    width: 50%; }
+  .col-xl-8 {
+    flex: 0 0 auto;
+    width: 66.66667%; } }
 
 .form-control {
   display: block;
@@ -1620,6 +1729,22 @@ textarea.form-control {
   --bs-btn-disabled-color: #fff;
   --bs-btn-disabled-bg: #587440;
   --bs-btn-disabled-border-color: #587440; }
+
+.btn-outline-primary {
+  --bs-btn-color: #587440;
+  --bs-btn-border-color: #587440;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #587440;
+  --bs-btn-hover-border-color: #587440;
+  --bs-btn-focus-shadow-rgb: 88, 116, 64;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #587440;
+  --bs-btn-active-border-color: #587440;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #587440;
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: #587440;
+  --bs-gradient: none; }
 
 .collapse:not(.show) {
   display: none; }
@@ -1762,6 +1887,43 @@ textarea.form-control {
     .navbar-expand-md .navbar-toggler {
       display: none; } }
 
+.card, .producto {
+  --bs-card-spacer-y: 1rem;
+  --bs-card-spacer-x: 1rem;
+  --bs-card-title-spacer-y: 0.5rem;
+  --bs-card-border-width: 1px;
+  --bs-card-border-color: var(--bs-border-color-translucent);
+  --bs-card-border-radius: 0.375rem;
+  --bs-card-box-shadow: ;
+  --bs-card-inner-border-radius: calc(0.375rem - 1px);
+  --bs-card-cap-padding-y: 0.5rem;
+  --bs-card-cap-padding-x: 1rem;
+  --bs-card-cap-bg: rgba(0, 0, 0, 0.03);
+  --bs-card-cap-color: ;
+  --bs-card-height: ;
+  --bs-card-color: ;
+  --bs-card-bg: #fff;
+  --bs-card-img-overlay-padding: 1rem;
+  --bs-card-group-margin: 0.75rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: var(--bs-card-height);
+  word-wrap: break-word;
+  background-color: var(--bs-card-bg);
+  background-clip: border-box;
+  border: var(--bs-card-border-width) solid var(--bs-card-border-color);
+  border-radius: var(--bs-card-border-radius); }
+  .card > hr, .producto > hr {
+    margin-right: 0;
+    margin-left: 0; }
+
+.card-body {
+  flex: 1 1 auto;
+  padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
+  color: var(--bs-card-color); }
+
 .badge {
   --bs-badge-padding-x: 0.65em;
   --bs-badge-padding-y: 0.35em;
@@ -1890,7 +2052,7 @@ textarea.form-control {
 .w-100 {
   width: 100% !important; }
 
-.h-100 {
+.h-100, .producto {
   height: 100% !important; }
 
 .flex-column {
@@ -1918,6 +2080,10 @@ textarea.form-control {
   margin-right: auto !important;
   margin-left: auto !important; }
 
+.my-4 {
+  margin-top: 1.5rem !important;
+  margin-bottom: 1.5rem !important; }
+
 .mt-5 {
   margin-top: 3rem !important; }
 
@@ -1926,6 +2092,9 @@ textarea.form-control {
 
 .me-3 {
   margin-right: 1rem !important; }
+
+.me-4 {
+  margin-right: 1.5rem !important; }
 
 .mb-0 {
   margin-bottom: 0 !important; }
@@ -1942,6 +2111,9 @@ textarea.form-control {
 .mb-5 {
   margin-bottom: 3rem !important; }
 
+.ms-3 {
+  margin-left: 1rem !important; }
+
 .p-3 {
   padding: 1rem !important; }
 
@@ -1951,6 +2123,14 @@ textarea.form-control {
 .px-2 {
   padding-right: 0.5rem !important;
   padding-left: 0.5rem !important; }
+
+.px-4 {
+  padding-right: 1.5rem !important;
+  padding-left: 1.5rem !important; }
+
+.py-2 {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important; }
 
 .py-3 {
   padding-top: 1rem !important;
@@ -1973,6 +2153,9 @@ textarea.form-control {
 .pt-5 {
   padding-top: 3rem !important; }
 
+.fs-5 {
+  font-size: 1.25rem !important; }
+
 .fs-6 {
   font-size: 1rem !important; }
 
@@ -1981,6 +2164,9 @@ textarea.form-control {
 
 .text-center {
   text-align: center !important; }
+
+.text-uppercase {
+  text-transform: uppercase !important; }
 
 /* rtl:begin:remove */
 
@@ -2020,12 +2206,16 @@ textarea.form-control {
     align-items: flex-start !important; } }
 
 @media (min-width: 768px) {
+  .d-md-flex {
+    display: flex !important; }
   .flex-md-column {
     flex-direction: column !important; }
   .justify-content-md-start {
     justify-content: flex-start !important; }
   .align-items-md-start {
     align-items: flex-start !important; }
+  .align-items-md-center {
+    align-items: center !important; }
   .text-md-start {
     text-align: left !important; } }
 
@@ -2034,6 +2224,8 @@ textarea.form-control {
     align-items: flex-start !important; }
   .order-lg-last {
     order: 6 !important; }
+  .mb-lg-5 {
+    margin-bottom: 3rem !important; }
   .py-lg-5 {
     padding-top: 3rem !important;
     padding-bottom: 3rem !important; }
@@ -2043,6 +2235,8 @@ textarea.form-control {
 @media (min-width: 1200px) {
   .justify-content-xl-start {
     justify-content: flex-start !important; }
+  .justify-content-xl-center {
+    justify-content: center !important; }
   .p-xl-4 {
     padding: 1.5rem !important; }
   .py-xl-5 {
@@ -2050,3 +2244,12 @@ textarea.form-control {
     padding-bottom: 3rem !important; }
   .pt-xl-5 {
     padding-top: 3rem !important; } }
+
+.logo {
+  width: clamp(5vw, 300%, 20vw); }
+
+/*Dejo esto para mejorar los estilos para la entrega final*/
+.alerta{
+  background: lightgreen;
+  color: #004050;
+}

@@ -1,0 +1,20 @@
+
+.producto{
+    @extend .card, .h-100;
+
+    &__foto{
+        @extend .card-img-top;
+        width: clamp(10vw, 30%, 20vw);
+        height: clamp(10vw, 30%, 20vw);
+    }
+    &__contenido{
+        @extend .card-body;
+        flex-grow: 1;
+        &--titulo{
+            @extend .card-title, .text-center;
+        }
+        &--texto{
+            @extend .card-text, .text-center;
+        }
+    }
+}
