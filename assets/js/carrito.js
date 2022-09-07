@@ -19,7 +19,7 @@ const contenedor = document.getElementById('productosContenedor');
 let productos = [];
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
-fetch('assets/db/bdfalsa.json')  //Traigo los datos de una API, de una base de datos falsa
+fetch('/assets/db/bdfalsa.json')  //Traigo los datos de una API, de una base de datos falsa
     // .then(respuesta => { //Esto lo pongo si es una API Real
     //     if (respuesta.ok) {
     //     return respuesta.json() //Si la respuesta me llega con un status 2xx de respuesta, entonces agarro al objeto HTTP Response, y con el método .json() pido los datos como objetos JS parseados desde una string JSON de la respuesta.
