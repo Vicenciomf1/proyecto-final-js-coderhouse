@@ -3,12 +3,7 @@
 @import "../../node_modules/bootstrap/scss/functions";
 @import "../../node_modules/bootstrap/scss/variables";
 
-//$theme-colors: map-merge($nuevos_colores, $theme-colors);
-//$colors: map-merge($nuevos_colores, $colors);
-// $spacers: map-merge($nuevos_box_model, $spacers);
-
-
-@import "./tema"; //Antes para que lo elimine el purgador
+@import "./tema"; //Va antes para que lo elimine el purgador y mi personalización del tema y de bootstrap lo sobrescriba
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 @import "./index";
 @import "./productos";

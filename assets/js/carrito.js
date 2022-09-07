@@ -11,23 +11,24 @@ function comprar(producto_agregado, carrito){  //Optimicé esta función, ahora 
     }
     return carrito;
 }
-function renderizarContador(){ //Esta función es para actualizar el contador de productos en el carrito
-    let cantidadProductos = carrito.reduce((acumulador, producto) => acumulador + producto.cantidad, 0); //Acá determino la cantidad de productos en el carrito
-    contador.innerText = `(${cantidadProductos})`;  //Este es el contador de productos en el carrito
-};
 
-
-
-//Y acá van los eventos y los nodos para agregar los objetos al carrito
+//Y acá van los eventos y los nodos:
 
 //En esta parte inserto cada producto desde la API
 const contenedor = document.getElementById('productosContenedor');
 let productos = [];
+let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
 fetch('assets/db/bdfalsa.json')  //Traigo los datos de una API, de una base de datos falsa
-    .then((respuesta) => respuesta.json())  //Con el objeto HTTP Response, pido los datos como objetos JS parseados de una string JSON.
+    .then(respuesta => {
+        if (respuesta.ok) {
+        return respuesta.json() //Si la respuesta me llega con un status 2xx de respuesta, entonces agarro al objeto HTTP Response, y con el método .json() pido los datos como objetos JS parseados desde una string JSON de la respuesta.
+        }
+        throw respuesta; //Si es que pasa del return, entonces hubo cualquier otra cosa como error, y dejo que lo agarre el siguiente catch (throw es de lanzar)
+    })  
     .then((datos) => {  //Con esos datos hago lo siguiente...
         productos = datos; //Guardo los productos para utilizarlos después también
-        for (const {nombre, descripcion, precio, foto} of productos){  //Inserto el HTML de cada uno
+        for (const {nombre, descripcion, precio, foto} of productos){  //Inserto el HTML de cada uno y formo el componente de cada producto
             const un_producto = document.createElement('div');
             un_producto.setAttribute('class', 'col-6 col-md-4 col-lg-3 col-xl-2');
             un_producto.innerHTML = `
@@ -43,18 +44,20 @@ fetch('assets/db/bdfalsa.json')  //Traigo los datos de una API, de una base de d
             `;
             contenedor.append(un_producto);  //Y finalmente ingreso todo esto a su contenedor, se repite el proceso por cada producto
         }
-    });
+    })
+    .catch((error) => console.log(error));  //Si hubo algún error, lo muestro en consola
 
-let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-let contador = document.querySelector('.estadoCantidadProductos');  //Este es el contador de productos en el carrito
-renderizarContador();
+
+//Y en esta sección me encargo de meter los productos en el carrito, si la anterior era para traer los productos y mostrarlos, esta es para registrar cuáles de aquellos fueron comprados
 
 contenedor.addEventListener('click', function(evento){  //Hay que hacer este paso previo para poder agregar el event handler a los nodos generados dinámicamente con la consulta a la API
     if (evento.target.classList.contains('productobtn')){  //Si clickeas en añadir un producto, entonces ahora sí haz algo
         let producto = evento.target.id;  //Con esta parte determino qué producto es el que disparó el evento
         comprar(producto, carrito); //Y lo agrego al carrito
-        localStorage.setItem('carrito', JSON.stringify(carrito));
-        renderizarContador();
+
+        localStorage.setItem('carrito', JSON.stringify(carrito)); //Me encargo de que los datos (el estado) puedan estar actualizdos entre cada página
+        renderizarContador(carrito);
+
         Toastify({ //Y luego doy feedback de lo añadido
             text: `Has comprado un/a ${producto}!`,
             duration: 3000,
@@ -65,6 +68,5 @@ contenedor.addEventListener('click', function(evento){  //Hay que hacer este pas
         }).showToast();
     }
 });
-
 
 

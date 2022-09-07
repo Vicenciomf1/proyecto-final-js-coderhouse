@@ -1,4 +1,4 @@
-(function() {
+(function() { //Este efecto parallax venía por defecto en el tema de bootstrap, así que decidí dejarlo pq se veía bonito, y cambiarle los var por let
   "use strict"; // Start of use strict
 
   function initParallax() {

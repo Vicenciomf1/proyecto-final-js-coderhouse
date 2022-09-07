@@ -52,7 +52,7 @@ function insertar_totales(carrito, descuento){
     
     nodo_subtotal.innerText = `$${subtotal} pesos`;
     nodo_descuento.innerText = `$${descontado} pesos`;
-    nodo_total.innerText = `$${subtotal-descontado} pesos`;
+    nodo_total.innerText = `$${subtotal-descontado} pesos`; //El total es la cantidad total menos el porcentaje de descuento
 }
 
 
@@ -70,6 +70,7 @@ let carrito = JSON.parse(localStorage.getItem('carrito')) || []; //El carrito lo
 let formularioDescuento = document.getElementById('descuento');  //El formulario de descuento es seleccionado
 let btnReseteoCarro = document.getElementById('resetearCarro');
 let tablaProductos = document.getElementById('contenedorProductos');
+
 
 formularioDescuento.addEventListener('submit', function(evento){
     evento.preventDefault();  //Evitamos que actualice la página
@@ -91,6 +92,7 @@ btnReseteoCarro.addEventListener('click', function(){
             carrito = [];
             localStorage.clear();
             calcular_todo();
+            renderizarContador([]);
             Swal.fire({
                 title: "Eliminado!",
                 icon: "success",
