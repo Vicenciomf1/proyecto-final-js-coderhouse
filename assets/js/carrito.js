@@ -20,12 +20,13 @@ let productos = [];
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
 fetch('assets/db/bdfalsa.json')  //Traigo los datos de una API, de una base de datos falsa
-    .then(respuesta => {
-        if (respuesta.ok) {
-        return respuesta.json() //Si la respuesta me llega con un status 2xx de respuesta, entonces agarro al objeto HTTP Response, y con el método .json() pido los datos como objetos JS parseados desde una string JSON de la respuesta.
-        }
-        throw respuesta; //Si es que pasa del return, entonces hubo cualquier otra cosa como error, y dejo que lo agarre el siguiente catch (throw es de lanzar)
-    })  
+    // .then(respuesta => { //Esto lo pongo si es una API Real
+    //     if (respuesta.ok) {
+    //     return respuesta.json() //Si la respuesta me llega con un status 2xx de respuesta, entonces agarro al objeto HTTP Response, y con el método .json() pido los datos como objetos JS parseados desde una string JSON de la respuesta.
+    //     }
+    //     throw respuesta; //Si es que pasa del return, entonces hubo cualquier otra cosa como error, y dejo que lo agarre el siguiente catch (throw es de lanzar)
+    // })  
+    .then((respuesta) => respuesta.json()) //Este es cuando se prueba con un JSON local
     .then((datos) => {  //Con esos datos hago lo siguiente...
         productos = datos; //Guardo los productos para utilizarlos después también
         for (const {nombre, descripcion, precio, foto} of productos){  //Inserto el HTML de cada uno y formo el componente de cada producto
