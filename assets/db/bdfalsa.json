@@ -1,6 +1,6 @@
 [
-    { "id": 1, "nombre": "Tomate", "descripcion": "Un tomate que te va a hacer volver por más tomates", "precio": 500, "foto": "assets/img/tomate.webp"},
-    { "id": 2, "nombre": "Apio", "descripcion": "Nuestro delicioso apio que te encantará", "precio": 300, "foto": "assets/img/apio.webp"},
-    { "id": 3, "nombre": "Manzana", "descripcion": "Nuestras frescas manzanas", "precio": 200, "foto": "assets/img/manzana.webp"},
-    { "id": 4, "nombre": "Palta", "descripcion": "Las paltas más ricas de tu vida!", "precio": 1200, "foto": "assets/img/palta.webp"}
+    { "id": 1, "nombre": "Tomate", "descripcion": "Un tomate que te va a hacer volver por más tomates", "precio": 500, "foto": "assets/img/productos/tomate.webp"},
+    { "id": 2, "nombre": "Apio", "descripcion": "Nuestro delicioso apio que te encantará", "precio": 300, "foto": "assets/img/productos/apio.webp"},
+    { "id": 3, "nombre": "Manzana", "descripcion": "Nuestras frescas manzanas", "precio": 200, "foto": "assets/img/productos/manzana.webp"},
+    { "id": 4, "nombre": "Palta", "descripcion": "Las paltas más ricas de tu vida!", "precio": 1200, "foto": "assets/img/productos/palta.webp"}
 ]

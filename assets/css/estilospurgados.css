@@ -759,7 +759,7 @@ textarea.form-control {
   .navbar-expand-md .navbar-toggler {
     display: none; } }
 
-.card, .producto {
+ .producto {
   --bs-card-spacer-y: 1rem;
   --bs-card-spacer-x: 1rem;
   --bs-card-title-spacer-y: 0.5rem;
@@ -788,14 +788,9 @@ textarea.form-control {
   border: var(--bs-card-border-width) solid var(--bs-card-border-color);
   border-radius: var(--bs-card-border-radius); }
 
-.card > hr, .producto > hr {
+ .producto > hr {
   margin-right: 0;
   margin-left: 0; }
-
-.card-body {
-  flex: 1 1 auto;
-  padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
-  color: var(--bs-card-color); }
 
 .badge {
   --bs-badge-padding-x: 0.65em;
@@ -952,10 +947,6 @@ textarea.form-control {
   margin-right: auto !important;
   margin-left: auto !important; }
 
-.my-4 {
-  margin-top: 1.5rem !important;
-  margin-bottom: 1.5rem !important; }
-
 .mt-5 {
   margin-top: 3rem !important; }
 
@@ -1093,8 +1084,6 @@ textarea.form-control {
     align-items: flex-start !important; }
   .order-lg-last {
     order: 6 !important; }
-  .mb-lg-5 {
-    margin-bottom: 3rem !important; }
   .py-lg-5 {
     padding-top: 3rem !important;
     padding-bottom: 3rem !important; }
@@ -1179,10 +1168,6 @@ img::-moz-selection {
 
 .bs-icon-md {
   --bs-icon-size: 1.5rem
-; }
-
-.bs-icon-xl {
-  --bs-icon-size: 2.5rem
 ; }
 
 .bs-icon.bs-icon-primary {
@@ -1887,7 +1872,7 @@ textarea.form-control {
     .navbar-expand-md .navbar-toggler {
       display: none; } }
 
-.card, .producto {
+ .producto {
   --bs-card-spacer-y: 1rem;
   --bs-card-spacer-x: 1rem;
   --bs-card-title-spacer-y: 0.5rem;
@@ -1915,14 +1900,9 @@ textarea.form-control {
   background-clip: border-box;
   border: var(--bs-card-border-width) solid var(--bs-card-border-color);
   border-radius: var(--bs-card-border-radius); }
-  .card > hr, .producto > hr {
+   .producto > hr {
     margin-right: 0;
     margin-left: 0; }
-
-.card-body {
-  flex: 1 1 auto;
-  padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
-  color: var(--bs-card-color); }
 
 .badge {
   --bs-badge-padding-x: 0.65em;
@@ -2080,10 +2060,6 @@ textarea.form-control {
   margin-right: auto !important;
   margin-left: auto !important; }
 
-.my-4 {
-  margin-top: 1.5rem !important;
-  margin-bottom: 1.5rem !important; }
-
 .mt-5 {
   margin-top: 3rem !important; }
 
@@ -2224,8 +2200,6 @@ textarea.form-control {
     align-items: flex-start !important; }
   .order-lg-last {
     order: 6 !important; }
-  .mb-lg-5 {
-    margin-bottom: 3rem !important; }
   .py-lg-5 {
     padding-top: 3rem !important;
     padding-bottom: 3rem !important; }
@@ -2248,8 +2222,24 @@ textarea.form-control {
 .logo {
   width: clamp(5vw, 300%, 20vw); }
 
-/*Dejo esto para mejorar los estilos para la entrega final*/
-.alerta{
-  background: lightgreen;
-  color: #004050;
-}
+.parallax {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end; }
+  .parallax__contenidoizq {
+    position: relative;
+    flex: 0 0 45%;
+    transform: translate3d(-15%, 35%, 0); }
+  .parallax__contenidoder {
+    position: relative;
+    flex: 0 0 45%;
+    transform: translate3d(-5%, 20%, 0); }
+  .parallax__contenidoabajo {
+    position: relative;
+    flex: 0 0 60%;
+    transform: translate3d(0, 0%, 0); }
+
+.nosotros__contenido {
+  max-width: 56.25rem; }
+  .nosotros__contenido--foto {
+    height: 15.625rem; }

@@ -1,4 +1,3 @@
-
 //Acá va la función de procesamiento
 function comprar(producto_agregado, carrito){  //Optimicé esta función, ahora está más legible y escalable
     let compra = productos.find(producto_disponible => producto_disponible.nombre === producto_agregado); //Determino qué producto se está comprando
@@ -12,6 +11,12 @@ function comprar(producto_agregado, carrito){  //Optimicé esta función, ahora 
     }
     return carrito;
 }
+function renderizarContador(){ //Esta función es para actualizar el contador de productos en el carrito
+    let cantidadProductos = carrito.reduce((acumulador, producto) => acumulador + producto.cantidad, 0); //Acá determino la cantidad de productos en el carrito
+    contador.innerText = `(${cantidadProductos})`;  //Este es el contador de productos en el carrito
+};
+
+
 
 //Y acá van los eventos y los nodos para agregar los objetos al carrito
 
@@ -40,13 +45,16 @@ fetch('assets/db/bdfalsa.json')  //Traigo los datos de una API, de una base de d
         }
     });
 
-let btnComprar = document.getElementById('comprar');  //Este es el botón para llevar hacia el carro de compra
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+let contador = document.querySelector('.estadoCantidadProductos');  //Este es el contador de productos en el carrito
+renderizarContador();
 
 contenedor.addEventListener('click', function(evento){  //Hay que hacer este paso previo para poder agregar el event handler a los nodos generados dinámicamente con la consulta a la API
     if (evento.target.classList.contains('productobtn')){  //Si clickeas en añadir un producto, entonces ahora sí haz algo
         let producto = evento.target.id;  //Con esta parte determino qué producto es el que disparó el evento
         comprar(producto, carrito); //Y lo agrego al carrito
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+        renderizarContador();
         Toastify({ //Y luego doy feedback de lo añadido
             text: `Has comprado un/a ${producto}!`,
             duration: 3000,
@@ -57,11 +65,6 @@ contenedor.addEventListener('click', function(evento){  //Hay que hacer este pas
         }).showToast();
     }
 });
-
-// btnComprar.addEventListener('click', function(evento) {  //Cuando la persona quiera ir al carrito de compra, ahí recién le agrego todo el carrito
-//     localStorage.setItem('carrito', JSON.stringify(carrito));
-// });
-
 
 
 

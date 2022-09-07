@@ -1,3 +1,31 @@
 .logo{
     width: clamp(5vw, 300%, 20vw);
 }
+
+.parallax{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    &__contenidoizq{
+        position: relative;
+        flex: 0 0 45%;
+        transform: translate3d(-15%, 35%, 0);
+    }
+    &__contenidoder{
+        position: relative;
+        flex: 0 0 45%;
+        transform: translate3d(-5%, 20%, 0);
+    }
+    &__contenidoabajo{
+        position: relative;
+        flex: 0 0 60%;
+        transform: translate3d(0, 0%, 0);
+    }
+}
+
+.nosotros__contenido{
+    max-width: 56.25rem;
+    &--foto{
+        height: 15.625rem;
+    }
+}

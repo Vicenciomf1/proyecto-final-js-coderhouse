@@ -17971,14 +17971,31 @@ textarea.form-control.is-invalid {
 .logo {
   width: clamp(5vw, 300%, 20vw); }
 
+.parallax {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end; }
+  .parallax__contenidoizq {
+    position: relative;
+    flex: 0 0 45%;
+    transform: translate3d(-15%, 35%, 0); }
+  .parallax__contenidoder {
+    position: relative;
+    flex: 0 0 45%;
+    transform: translate3d(-5%, 20%, 0); }
+  .parallax__contenidoabajo {
+    position: relative;
+    flex: 0 0 60%;
+    transform: translate3d(0, 0%, 0); }
+
+.nosotros__contenido {
+  max-width: 56.25rem; }
+  .nosotros__contenido--foto {
+    height: 15.625rem; }
+
 .producto__foto {
   width: clamp(10vw, 30%, 20vw);
   height: clamp(10vw, 30%, 20vw); }
 
 .producto__contenido {
   flex-grow: 1; }
-
-/*Dejo esto para mejorar los estilos para la entrega final*/
-.alerta {
-  background: lightgreen;
-  color: #004050; }
